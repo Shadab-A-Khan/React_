@@ -1,6 +1,8 @@
+
 .header {
   display: flex;
   justify-content: space-between;
+  background-color: beige;
   border: 1px solid black;
 }
 
@@ -24,8 +26,8 @@
 }
 
 .res-card {
-  margin: 10px;
-  padding: 5px;
+    padding: 40px;
+  margin: 30px;
   width: 200px;
   height: 300px;
 }
@@ -43,6 +45,8 @@ h4 {
 }
 
 .res-container {
+  margin-left: 70px;
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(233, 248, 247);
 }
