@@ -16,7 +16,7 @@ const Body = () => {
   //   const json = await data.json();
   //   console.log(json);
   //   setListOfRestaurantList(
-  //     json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+  //     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
   //   );
   // };
 
@@ -37,7 +37,8 @@ const Body = () => {
       const resData = await checkJsonData(json);
       setListOfRestaurantList(resData);
     } catch (error) {
-      console.log(error);
+      setListOfRestaurantList(restaurantList);
+      console.log(error+  "Hellow we are getting mockData now");
     }
   }
 
@@ -52,7 +53,9 @@ const Body = () => {
             );
             setListOfRestaurantList(filteredList);
           }}
-        ></button>
+        >
+          <h4> 4+ Rating restaurants</h4>
+        </button>
       </div>
       <div className="res-container">
         {listOfrestaurantList.map((restaurant) => {
