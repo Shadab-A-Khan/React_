@@ -1,8 +1,9 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: beige;
+  background-color: rgb(30, 96, 77);
   border: 1px solid black;
+  color: white;
 }
 
 .logo {
@@ -25,10 +26,16 @@
 }
 
 .res-card {
+  overflow: hidden;
   padding: 40px;
+  padding-top: 20px;
   margin: 30px;
   width: 200px;
   height: 300px;
+  border-radius: 9px;
+}
+.res-card:hover {
+  transform: translate(0, -7px);
 }
 .search {
   padding: 10px;
@@ -44,13 +51,37 @@ h4 {
 }
 
 .res-container {
-  margin-left: 70px;
+  margin: 70px;
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(233, 248, 247);
+  /* background-color: rgb(233, 248, 247); */
 }
-.filter-btn{
-  margin: 10px;
-  padding: 10px;
+.filter {
+  display: flex;
+}
+
+
+/* Shimmer Style Start */
+
+.shimmer-container {
+  margin: 50px;
+  /* background-color: rgb(233, 248, 247); */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  padding: 40px;
+  margin: 30px;
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+}
+
+/* Shimmer Style ends */
+
+.login {
+  padding: 0 20px;
   cursor: pointer;
 }
