@@ -14,4 +14,14 @@
  *   -Links
  *   -Address
  *   -Contact
+
+
+*   useEffect : it is followed by each render
+*  it has two parameter
+*  i) call Back Funcion ii) dependency array
+*  => woking of useEffect
+*    - if dependecy array is not there it will be called  after each rendering
+*    - if dependecy array is there and it is EMPTY it will be called  after first render ONLY, it wont be called again and again with each render
+*    - if dependecy array is there and is NOT emepy it will be called  wheren ever the value of dependecy array changes
+
  */

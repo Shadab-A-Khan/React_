@@ -37,17 +37,13 @@ const Body = () => {
       console.log(" Hello! , we are getting **mockData now**");
     }
   }
-  console.log("render");
   return listOfrestaurantList.length == 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
-
-
         {/*Search */}
         <div className="search">
-
           <input
             type="text"
             className="search-box"
@@ -70,10 +66,7 @@ const Body = () => {
           >
             Press to Search
           </button>
-
-
         </div>
-
 
         {/* fiter */}
         <button
@@ -81,10 +74,10 @@ const Body = () => {
             const filteredList = listOfrestaurantList.filter(
               (resData) => resData.info.avgRating > 4
             );
-            setListOfRestaurantList(filteredList);
+            SetFilteredRestaurant(filteredList);
           }}
         >
-          Top Rated restaurants
+          <h4>Top Rated restaurants</h4>
         </button>
       </div>
       <div className="res-container">
