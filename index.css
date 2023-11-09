@@ -1,4 +1,3 @@
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -89,4 +88,35 @@ h4 {
   padding-top: 0px;
   padding-bottom: 0px;
   cursor: pointer;
+}
+
+/* Restaurant  menu style */
+.resta {
+  padding: 40px;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 100px;
+}
+.resta > h1 {
+  color: rgb(0, 17, 255);
+}
+.resta > div > h3 {
+  color: green;
+}
+.resta > h3 {
+  color: purple;
+}
+.resta:hover {
+  transform: translate(0, -7px);
+}
+.menu-card {
+  font-size: 15px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(186, 222, 235);
 }

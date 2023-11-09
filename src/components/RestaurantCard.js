@@ -1,5 +1,4 @@
 import { CDN_URL } from "../../utils/constants";
-import RestaurantMenu from "./RestaurantMenu";
 
 const RestaurantCard = ({
   cloudinaryImageId,

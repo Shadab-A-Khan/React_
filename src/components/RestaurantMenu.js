@@ -33,17 +33,24 @@ const RestaurantMenu = () => {
       console.log(" Hello! , we are getting **mockData now** FROM MENU");
     }
   }
-  return resInfo === null ? (
-    <Shimmer />
-  ) : (
-    <div className="menu">
+  if (resInfo === null) {
+    return <Shimmer />;
+  }
+  return (
+    <div key={resInfo.id} className="menu-card">
       {resInfo.map((restaurant) => {
         return (
-          <div>
+          <div key={restaurant.id} className="resta">
             <h1>{restaurant.info.name}</h1>
-            <h2>Menu</h2>
-            <h3>{restaurant.info.cuisines.join("  , ")}</h3>
-            <h3>{restaurant.info.costForTwo}</h3>
+            <div className="menu">
+              <h2>Menu</h2>
+              <ul>
+                {restaurant.info.cuisines.map((cuisine) => (
+                  <li key={cuisine.id}>{cuisine}</li>
+                ))}
+              </ul>
+            </div>
+            <h3>Rs{restaurant.info.costForTwo}</h3>
           </div>
         );
       })}
