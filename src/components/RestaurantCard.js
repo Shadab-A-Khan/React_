@@ -1,4 +1,6 @@
 import { CDN_URL } from "../../utils/constants";
+import RestaurantMenu from "./RestaurantMenu";
+
 const RestaurantCard = ({
   cloudinaryImageId,
   name,
@@ -24,15 +26,6 @@ const RestaurantCard = ({
 };
 
 export default RestaurantCard;
-
-
-
-
-
-
-
-
-
 
 // import { CDN_URL } from "../../utils/constants";
 
