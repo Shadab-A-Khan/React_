@@ -3,6 +3,7 @@ import restaurantList from "../../utils/mockData";
 import { useState, useEffect } from "react";
 import { SWIGGY_API } from "../../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfrestaurantList, setListOfRestaurantList] = useState([]);
@@ -83,7 +84,13 @@ const Body = () => {
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => {
           return (
-            <RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
+            <Link
+              className="link"
+              key={restaurant?.info?.id}
+              to={"/restaurant/" + restaurant?.info?.id}
+            >
+              <RestaurantCard {...restaurant?.info} />
+            </Link>
           );
         })}
       </div>

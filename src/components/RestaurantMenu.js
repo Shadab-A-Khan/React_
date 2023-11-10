@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { SWIGGY_API } from "../../utils/constants";
 import menuMockData from "../../utils/menuMockData";
+import { useParams } from "react-router-dom";
+import Menu from "./Menu";
 import Shimmer from "./Shimmer";
+
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
+  const { resId } = useParams();
 
   useEffect(() => {
     fetchData();
@@ -23,10 +27,8 @@ const RestaurantMenu = () => {
           }
         }
       }
-
       const resData = await checkJsonData(json);
       console.log(" **LIVE** FROM MENU");
-      console.log(resData);
       setResInfo(resData);
     } catch (error) {
       setResInfo(menuMockData);
@@ -36,23 +38,13 @@ const RestaurantMenu = () => {
   if (resInfo === null) {
     return <Shimmer />;
   }
+
   return (
     <div key={resInfo.id} className="menu-card">
-      {resInfo.map((restaurant) => {
-        return (
-          <div key={restaurant.id} className="resta">
-            <h1>{restaurant.info.name}</h1>
-            <div className="menu">
-              <h2>Menu</h2>
-              <ul>
-                {restaurant.info.cuisines.map((cuisine) => (
-                  <li key={cuisine.id}>{cuisine}</li>
-                ))}
-              </ul>
-            </div>
-            <h3>Rs{restaurant.info.costForTwo}</h3>
-          </div>
-        );
+      {resInfo.map((restaur) => {
+        if (restaur?.info?.id == resId) {
+          return <Menu key={restaur?.info?.id} {...restaur.info} />;
+        }
       })}
     </div>
   );
