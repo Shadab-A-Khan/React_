@@ -4,36 +4,41 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      UserInfo: {
+        name: "Elon Musk",
+        location: "Mars",
+        contact: "abc",
+        avatar_url: "https://avatars.githubusercontent.com/u/78543910?v=4",
+      },
     };
-    console.log("Child Constructor render");
+    console.log("child constructor");
   }
 
-  componentDidMount(){
-    console.log("child componentDidMount render");
+  async componentDidMount() {
+    console.log("child cdm");
+    const data = await fetch("https://api.github.com/users/Shadab-A-Khan");
+    const json = await data.json();
+    this.setState({
+      UserInfo: json,
+    });
   }
 
+  componentDidUpdate() {
+    console.log("component did update now ");
+  }
 
+  componentWillUnmount() {
+    console.log("unmounting (removing)-> it is called when we leave the page to other page");
+  }
   render() {
-    console.log("Child Body render");
-    const { count } = this.state;
+    console.log("child body");
+    const { name, location, avatar_url } = this.state.UserInfo;
     return (
-      <div>
-        <div>React_project_class</div>
-        <div>{count}</div>
-        <button
-          onClick={() => {
-            this.setState({
-              count: count + 1,
-            });
-          }}
-        >
-          Click to Increase Count
-        </button>
-        <div>{}</div>
-        <div>{this.props.name}</div>
-        <div>{this.props.location}</div>
-        <div>{this.props.contact}</div>
+      <div className="classy">
+        <img className="avatar-img" src={avatar_url} />
+        <div>Name: {name}</div>
+        <div>Address : {location}</div>
+        <div>Contact: abc.com </div>
       </div>
     );
   }

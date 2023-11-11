@@ -158,13 +158,21 @@ h4 {
   margin: 100px;
 }
 
-.classy{
-  border: 1px solid black;
-  margin: 10%;
-  width: 20%;
+.about{
+  padding: 40px;
+  padding-top: 10px;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(204, 209, 211);
+  border-radius: 10px;
+  margin: 50px; 
 }
-.funcy{
-  border: 1px solid black;
-  margin: 10%;
-  width: 20%;
+
+.avatar-img{
+  
+  margin: 10px;
+  margin-left: 4px;
+  height: 40%;
+  width: 100%;
+  border-radius: 10px;
 }
