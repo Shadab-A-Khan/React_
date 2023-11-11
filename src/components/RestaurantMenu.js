@@ -4,6 +4,7 @@ import menuMockData from "../../utils/menuMockData";
 import { useParams } from "react-router-dom";
 import Menu from "./Menu";
 import Shimmer from "./Shimmer";
+import Shimmer_menu from "./Shimmer_menu";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -36,7 +37,7 @@ const RestaurantMenu = () => {
     }
   }
   if (resInfo === null) {
-    return <Shimmer />;
+    return <Shimmer_menu />;
   }
 
   return (

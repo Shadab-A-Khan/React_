@@ -10,7 +10,7 @@ const RestaurantCard = ({
 }) => {
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <img
         className="res-logo"
         alt="res-logo"
@@ -19,7 +19,6 @@ const RestaurantCard = ({
       <h4>{cuisines}</h4>
       <h4>{areaName}</h4>
       <h4> {avgRatingString} starts</h4>
-      <h4>Rs {costForTwo} For Two</h4>
     </div>
   );
 };
