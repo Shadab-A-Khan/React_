@@ -5,7 +5,6 @@ const RestaurantCard = ({
   name,
   cuisines,
   areaName,
-  costForTwo,
   avgRatingString,
 }) => {
   return (
@@ -24,4 +23,3 @@ const RestaurantCard = ({
 };
 
 export default RestaurantCard;
-

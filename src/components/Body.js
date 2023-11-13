@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { SWIGGY_API } from "../../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline_offline_status from "../../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfrestaurantList, setListOfRestaurantList] = useState([]);
@@ -34,9 +35,18 @@ const Body = () => {
       SetFilteredRestaurant(resData);
     } catch (error) {
       setListOfRestaurantList(restaurantList);
-      SetFilteredRestaurant(resData);
+      SetFilteredRestaurant(restaurantList);
       console.log(" Hello! , we are getting **mockData now**");
     }
+  }
+  const onlinestatus = useOnline_offline_status();
+  if (onlinestatus === false) {
+    return (
+      <h1>
+        Looks Like your internet is offline, please check your internet
+        Connection
+      </h1>
+    );
   }
   return listOfrestaurantList.length == 0 ? (
     <Shimmer />
