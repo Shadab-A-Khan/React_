@@ -31,6 +31,7 @@ const Body = () => {
       }
       const resData = await checkJsonData(json);
       console.log(" Hello! , we are **LIVE** now");
+      console.log(resData);
       setListOfRestaurantList(resData);
       SetFilteredRestaurant(resData);
     } catch (error) {
@@ -52,21 +53,21 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
+      <div className="flex justify-between m-2.5">
         {/*Search */}
-        <div className="search">
+        <div className="m-2.5 p-2.5">
           <input
             type="text"
-            className="search-box"
+            className="p-2 m-2"
             value={searchText}
-            placeholder="seach..."
+            placeholder="Search..."
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
 
           <button
-            className="serach-button"
+          className=" bg-blue-600 text-white p-2 m-2 rounded-lg"
             onClick={() => {
               console.log(searchText);
               const filteredRestaurant = listOfrestaurantList.filter((res) =>
@@ -88,14 +89,14 @@ const Body = () => {
             SetFilteredRestaurant(filteredList);
           }}
         >
-          <h4>Top Rated restaurants</h4>
+          <h1 className="bg-green-200 mx-10 p-2 rounded-lg">Top Rated ⭐ </h1>
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap mx-[80px] rounded-lg">
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link
-              className="link"
+              className="no-underline"
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >

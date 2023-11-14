@@ -12,7 +12,7 @@ class About extends React.Component {
   render() {
     console.log(" Parent body Render");
     return (
-      <div className="about">
+      <div className="@apply w-[300px] h-full bg-[rgb(204,209,211)] m-[50px] pt-2.5 p-10 rounded-[10px]">
         <h2>Member</h2>
         <UserClass />
       </div>

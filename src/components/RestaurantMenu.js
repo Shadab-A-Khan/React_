@@ -13,7 +13,10 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div key={resInfo.id} className="menu-card">
+    <div
+      key={resInfo.id}
+      className="text-[15px] flex flex-wrap flex-row justify-center m-2.5"
+    >
       {resInfo.map((restaur) => {
         if (restaur?.info?.id == resId) {
           return <Menu key={restaur?.info?.id} {...restaur.info} />;
