@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { CDN_URL } from "../../utils/constants";
 
 const RestaurantCard = ({
@@ -21,13 +22,30 @@ const RestaurantCard = ({
       <h4>{areaName}</h4>
       <ul className="flex text-s">
         <li className="my-[13%] pr-2 list-style-ty font-bold">
-          <h4 className="bg-green-400 rounded-[5px] px-1 "> ⭐{avgRatingString}</h4>
+          <h4 className="bg-green-400 rounded-[5px] px-1 ">
+            {" "}
+            ⭐{avgRatingString}
+          </h4>
         </li>
         <li className="mt-[13%] pr-2">▪️{sla.slaString}</li>
         <li className="mt-[13%] pr-2">▪️Rs{costForTwo}</li>
       </ul>
     </div>
   );
+};
+
+// Higher order Component
+export const veg = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className=" absolute bg-gray-700 text-white ml-7 mt-12 overflow-auto px-2 text-sm rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

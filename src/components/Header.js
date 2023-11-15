@@ -14,19 +14,19 @@ const Header = () => {
       <div className="px-5 py-0">
         <ul className="text-2xl flex list-none pt-8" >
           <li className="m-2.5 p-2.5 hover:translate-y-1"> {onlineStaus == true ? "✅" : "❌"}</li>
-          <li className="m-2.5 p-2.5 hover:translate-y-1">
+          <li className="m-2.5 p-2.5 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black]">
             <Link to="/">Home</Link>
           </li>
-          <li className="m-2.5 p-2.5 hover:translate-y-1">
+          <li className="m-2.5 p-2.5 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black]">
             <Link to="/about">About</Link>
           </li>
-          <li className="m-2.5 p-2.5 hover:translate-y-1">
+          <li className="m-2.5 p-2.5 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black]">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="m-2.5 p-2.5 hover:translate-y-1">
+          <li className="m-2.5 p-2.5 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black]">
             <Link to="/cart">Cart</Link>
           </li>
-          <li className="m-2.5 p-2.5 hover:translate-y-1">
+          <li className="m-2.5 p-2.5 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black]">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button

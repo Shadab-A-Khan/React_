@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { veg } from "./RestaurantCard";
 import restaurantList from "../../utils/mockData";
 import { useState, useEffect } from "react";
 import { SWIGGY_API } from "../../utils/constants";
@@ -10,7 +10,7 @@ const Body = () => {
   const [listOfrestaurantList, setListOfRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, SetFilteredRestaurant] = useState([]);
-
+  const VegFoodComponent = veg(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -67,7 +67,7 @@ const Body = () => {
           />
 
           <button
-          className=" bg-blue-600 text-white p-2 m-2 rounded-lg hover:translate-y-1"
+            className=" bg-blue-600 text-white p-2 m-2 rounded-lg hover:translate-y-1"
             onClick={() => {
               console.log(searchText);
               const filteredRestaurant = listOfrestaurantList.filter((res) =>
@@ -89,7 +89,9 @@ const Body = () => {
             SetFilteredRestaurant(filteredList);
           }}
         >
-          <h1 className="bg-green-200 mx-10 p-2 rounded-lg hover:translate-y-1">Top Rated ⭐ </h1>
+          <h1 className="bg-green-200 mx-10 p-2 rounded-lg hover:translate-y-1">
+            Top Rated ⭐{" "}
+          </h1>
         </button>
       </div>
       <div className="flex flex-wrap mx-[7%] mr-rounded-lg">
@@ -100,7 +102,11 @@ const Body = () => {
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >
-              <RestaurantCard {...restaurant?.info} />
+              {restaurant?.info?.veg ? (
+                <VegFoodComponent {...restaurant?.info} />
+              ) : (
+                <RestaurantCard {...restaurant?.info} />
+              )}
             </Link>
           );
         })}
