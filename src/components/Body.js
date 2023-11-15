@@ -52,13 +52,13 @@ const Body = () => {
   return listOfrestaurantList.length == 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="w-[100%] h-[100%]">
       <div className="flex justify-between m-2.5">
         {/*Search */}
         <div className="m-2.5 p-2.5">
           <input
             type="text"
-            className="p-2 m-2"
+            className="p-2 m-2 hover:translate-y-1"
             value={searchText}
             placeholder="Search..."
             onChange={(e) => {
@@ -67,7 +67,7 @@ const Body = () => {
           />
 
           <button
-          className=" bg-blue-600 text-white p-2 m-2 rounded-lg"
+          className=" bg-blue-600 text-white p-2 m-2 rounded-lg hover:translate-y-1"
             onClick={() => {
               console.log(searchText);
               const filteredRestaurant = listOfrestaurantList.filter((res) =>
@@ -89,10 +89,10 @@ const Body = () => {
             SetFilteredRestaurant(filteredList);
           }}
         >
-          <h1 className="bg-green-200 mx-10 p-2 rounded-lg">Top Rated ⭐ </h1>
+          <h1 className="bg-green-200 mx-10 p-2 rounded-lg hover:translate-y-1">Top Rated ⭐ </h1>
         </button>
       </div>
-      <div className="flex flex-wrap mx-[80px] rounded-lg">
+      <div className="flex flex-wrap mx-[7%] mr-rounded-lg">
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link

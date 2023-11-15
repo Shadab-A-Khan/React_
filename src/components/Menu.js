@@ -2,7 +2,7 @@ import { CDN_URL } from "../../utils/constants";
 
 const Menu = (resInfo) => {
   return (
-    <div key={resInfo.id} className="w-[500px] h-[600px] bg-gray-200 m-[100px] pt-5 p-10 rounded-[10px] hover:translate-y-3">
+    <div key={resInfo.id} className="w-[500px] h-[600px] m-[100px] mt-1 p-10 pt-5  rounded-[9px] hover:scale-95 shadow-[0_0_3px_#adadad]">
       <h3 className="font-bold text-xl text-black">{resInfo.name}</h3>
 
       <img
