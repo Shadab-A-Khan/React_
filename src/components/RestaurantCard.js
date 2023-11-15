@@ -11,7 +11,7 @@ const RestaurantCard = ({
   avgRatingString,
 }) => {
   return (
-    <div className="overflow-hidden w-[17.314rem] h-[22.9rem] m-[1.5rem] pt-4 p-3 rounded-[9px] hover:scale-95 hover:shadow-[0_0_3px_#adadad]">
+    <div className="overflow-hidden w-[17.394rem] h-[22.9rem] m-[1.5rem] mt-[2rem] pt-4 p-3 rounded-[9px] hover:scale-95 hover:shadow-[0_0_3px_#adadad]">
       <h3 className="font-bold text-xl text-black ">{name}</h3>
       <img
         className="w-full h-3/6 my-4 rounded-lg "
@@ -27,8 +27,8 @@ const RestaurantCard = ({
             ⭐{avgRatingString}
           </h4>
         </li>
-        <li className="mt-[13%] pr-2">▪️{sla.slaString}</li>
-        <li className="mt-[13%] pr-2">▪️Rs{costForTwo}</li>
+        <li className="mt-[13%] pr-2 text-sm font-serif">🕗{sla.slaString}</li>
+        <li className="mt-[13%] pr-2 text-sm font-serif">▪️Rs{costForTwo}</li>
       </ul>
     </div>
   );
@@ -39,7 +39,7 @@ export const veg = (RestaurantCard) => {
   return (props) => {
     return (
       <div>
-        <label className=" absolute bg-gray-700 text-white ml-7 mt-12 overflow-auto px-2 text-sm rounded-lg">
+        <label className=" absolute bg-black text-white ml-6 overflow-auto px-2 text-sm rounded-md">
           Promoted
         </label>
         <RestaurantCard {...props} />

@@ -89,7 +89,7 @@ const Body = () => {
             SetFilteredRestaurant(filteredList);
           }}
         >
-          <h1 className="bg-green-200 mx-10 p-2 rounded-lg hover:translate-y-1">
+          <h1 className="bg-green-600 text-white mx-10 p-2 rounded-lg hover:translate-y-1">
             Top Rated ⭐{" "}
           </h1>
         </button>

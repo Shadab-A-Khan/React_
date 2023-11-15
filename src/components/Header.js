@@ -7,7 +7,7 @@ const Header = () => {
   const [btn, setBtn] = useState("Login");
   const onlineStaus = useOnline_offline_status();
   return (
-    <div className="flex item bg-center justify-between bg-[#ffa600ee]">
+    <div className="flex item bg-center justify-between bg-[#d5ebfa]">
       <div className="logo-container">
         <img className="w-[200px] hover:bg-gre" src={LOGO_URL} />
       </div>
@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className=" btnC cursor-pointer ml-2.5 py-0 p-[30px] bg-gray-300 hover:translate-y-1"
+            className=" btnC cursor-pointer ml-2.5 px-[20px] bg-gray-300 hover:translate-y-1 rounded-lg"
             onClick={() => {
               btn === "Login" ? setBtn("Logout") : setBtn("Login");
             }}
