@@ -50,21 +50,21 @@ const RestaurantMenu = () => {
 
   return (
     <div >
-      <div className="flex space-between py-4 columns-1 bg-black text-white my-1 ">
+      <div className="flex space-between columns-1 bg-black text-white pt-3">
         <div className="">
           {" "}
           <img
-            className="h-[9rem] ml-[32rem] "
+            className="h-[9rem] ml-[32rem] rounded-lg hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] shadow-[0_0_1px_#adadad] p-2"
             alt="res-logo"
             src={CDN_URL + res.cloudinaryImageId}
           />
         </div>
 
         <div className=" ml-[2rem] mt-[1rem] text-white">
-          <h3 className="font-bold text-xl ">{res.name}</h3>
+          <h3 className="font-bold text-xl hover:translate-y-1 hover:scale-95">{res.name}</h3>
           <h4>{res.areaName}</h4>
           <ul className="flex text-s">
-            <li className="my-[10%] pr-2 list-style-ty font-bold">
+            <li className="my-[10%] pr-2 list-style-ty font-bold hover:translate-y-1 hover:scale-95 rounded-lg">
               <h4
                 className={
                   res.avgRating >= 4
@@ -76,10 +76,10 @@ const RestaurantMenu = () => {
                 ⭐{res.avgRating}
               </h4>
             </li>
-            <li className="mt-[10%] pr-2 text-white text-sm font-serif">
+            <li className="mt-[10%] pr-2 text-white text-sm font-serif hover:translate-y-1 hover:scale-95 rounded-lg ">
               🕗25 min
             </li>
-            <li className="mt-[10%] pr-2 text-sm font-serif">
+            <li className="mt-[10%] pr-2 text-sm font-serif hover:translate-y-1 hover:scale-95 rounded-lg ">
               ▪️Rs{res.costForTwo}
             </li>
           </ul>
