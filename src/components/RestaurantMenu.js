@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
     >
       {resInfo.map((restaur) => {
         if (restaur?.info?.id == resId) {
-          return <Menu key={restaur?.info?.id} {...restaur.info} />;
+          return <Menu key={restaur?.info?.id} {...restaur} />;
         }
       })}
     </div>

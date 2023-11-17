@@ -39,15 +39,15 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
       },
-      {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            {" "}
-            <Grocery />
-          </Suspense>
-        ),
-      },
+      // {
+      //   path: "/grocery",
+      //   element: (
+      //     <Suspense fallback={<h1>Loading...</h1>}>
+      //       {" "}
+      //       <Grocery />
+      //     </Suspense>
+      //   ),
+      // },
     ],
     errorElement: <Error />,
   },
