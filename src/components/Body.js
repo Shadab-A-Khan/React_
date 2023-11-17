@@ -31,7 +31,6 @@ const Body = () => {
       }
       const resData = await checkJsonData(json);
       console.log(" Hello! , we are **LIVE** now");
-      console.log(resData);
       setListOfRestaurantList(resData);
       SetFilteredRestaurant(resData);
     } catch (error) {

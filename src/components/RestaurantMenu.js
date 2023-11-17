@@ -17,10 +17,8 @@ const RestaurantMenu = () => {
       key={resInfo.id}
       className="text-[15px] flex flex-wrap flex-row justify-center m-2.5"
     >
-      {resInfo.map((restaur) => {
-        if (restaur?.info?.id == resId) {
-          return <Menu key={restaur?.info?.id} {...restaur} />;
-        }
+      {resInfo.map((menu) => {
+        return <Menu key={menu?.card.info?.id} {...menu.card.info} />;
       })}
     </div>
   );
