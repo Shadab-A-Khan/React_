@@ -49,18 +49,18 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div>
-      <div className="flex h-[10%] w-[100%] bg-black text-white my-1 py-2">
+    <div >
+      <div className="flex space-between py-4 columns-1 bg-black text-white my-1 ">
         <div className="">
           {" "}
           <img
-            className="h-[9rem] ml-[22rem] p-[0.5rem]"
+            className="h-[9rem] ml-[32rem] "
             alt="res-logo"
             src={CDN_URL + res.cloudinaryImageId}
           />
         </div>
 
-        <div className=" ml-[22rem] mt-[1rem] text-white">
+        <div className=" ml-[2rem] mt-[1rem] text-white">
           <h3 className="font-bold text-xl ">{res.name}</h3>
           <h4>{res.areaName}</h4>
           <ul className="flex text-s">
