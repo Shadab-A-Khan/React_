@@ -9,6 +9,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
+  
+
 
   const [res, setRes] = useState([]);
   useEffect(() => {
@@ -42,19 +44,21 @@ const RestaurantMenu = () => {
   }
 
   for (let i = 0; i < res.length; i++) {
-    if (res[i].info.id === resId) {
-      setRes(res[i].info);
+    if (res[i]?.info?.id === resId) {
+      setRes(res[i]?.info);
       break;
     }
   }
 
+
+  
   return (
     <div >
-      <div className="flex space-between columns-1 bg-black text-white pt-3">
+      <div className="flex space-between columns-1 bg-black text-white">
         <div className="">
           {" "}
           <img
-            className="h-[9rem] ml-[32rem] rounded-lg hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] shadow-[0_0_1px_#adadad] p-2"
+            className="h-[9rem] ml-[32rem] rounded-lg hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] shadow-[0_0_3px_#adadad] p-2"
             alt="res-logo"
             src={CDN_URL + res.cloudinaryImageId}
           />
@@ -86,11 +90,11 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <div
-        key={resInfo.id}
+        key={resInfo?.id}
         className="text-[15px] flex flex-wrap flex-row justify-center m-2.5"
       >
-        {resInfo.map((menu) => {
-          return <Menu key={menu?.card.info?.id} {...menu.card.info} />;
+        {resInfo?.map((menu) => {
+          return <Menu key={menu?.card?.info?.id} {...menu?.card?.info} />;
         })}
       </div>
     </div>

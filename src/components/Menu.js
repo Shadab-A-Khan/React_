@@ -11,7 +11,9 @@ const Menu = (menu) => {
         <div className="h-[100px] w-[200px] pr-4">
           <img
             className="rounded-lg hover:scale-95"
+            alt="food Img"
             src={CDN_URL + menu.imageId}
+            
           ></img>
           <label className="relative">
             <button className="my-4 px-11 mb-9 text-white bg-green-500 text-lg hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
