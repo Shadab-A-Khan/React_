@@ -16,11 +16,11 @@ const useRestaurantMenu = (resId) => {
             jsonData =
               json?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
               const categories = json.data.cards[i].groupedCard.cardGroupMap.REGULAR.cards.filter(c=>c?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+              jsonData = categories;
             break;
           }
         }
       }
-      console.log(jsonData);
       setResInfo(jsonData);
       console.log(" **LIVE** FROM MENU");
     } catch (error) {
