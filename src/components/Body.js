@@ -63,7 +63,7 @@ const Body = () => {
             type="text"
             className="p-2 m-2 hover:translate-y-1"
             value={searchText}
-            placeholder="Search..."
+            placeholder="Search Restaurant..."
             onChange={(e) => {
               setSearchText(e.target.value);
             }}

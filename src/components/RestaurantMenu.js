@@ -61,7 +61,7 @@ const RestaurantMenu = () => {
             />
           </div>
 
-          <div className="w-2/3 text-white p-[2rem] pt-[3rem]">
+          <div className="w-2/3 text-white p-[2rem] pt-[2rem]">
             <h3 className="pb-[1rem] font-bold text-xl">{res.name}</h3>
             <h4 className="pb-[1rem]">{res.areaName}</h4>
             <ul className="flex text-s">
