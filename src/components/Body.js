@@ -1,14 +1,17 @@
 import RestaurantCard, { veg } from "./RestaurantCard";
 import restaurantList from "../../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { SWIGGY_API } from "../../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline_offline_status from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 const Body = () => {
+  const { loggedInUser, setUserName } = useContext(UserContext);
   const [listOfrestaurantList, setListOfRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
+
   const [filteredRestaurant, SetFilteredRestaurant] = useState([]);
   const VegFoodComponent = veg(RestaurantCard);
   useEffect(() => {
@@ -48,6 +51,7 @@ const Body = () => {
       </h1>
     );
   }
+
   return listOfrestaurantList.length == 0 ? (
     <Shimmer />
   ) : (
@@ -78,7 +82,14 @@ const Body = () => {
             Press to Search
           </button>
         </div>
-
+        <div className="searchflex items-center m-4 p-2 rounded-[9px] shadow-[0_0_1.5px_#adadad] hover:scale-95 hover:shadow-[0_0_3px_#adadad]">
+          <input
+            className="p-3"
+            placeholder="Enter User Name"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
         {/* fiter */}
         <button
           onClick={() => {

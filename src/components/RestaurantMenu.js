@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
-
+  const [showItems, setShowItems] = useState(null);
   const resInfo = useRestaurantMenu(resId);
 
   const [res, setRes] = useState([]);
@@ -62,9 +62,7 @@ const RestaurantMenu = () => {
           </div>
 
           <div className="w-2/3 text-white p-[2rem] pt-[3rem]">
-            <h3 className="pb-[1rem] font-bold text-xl">
-              {res.name}
-            </h3>
+            <h3 className="pb-[1rem] font-bold text-xl">{res.name}</h3>
             <h4 className="pb-[1rem]">{res.areaName}</h4>
             <ul className="flex text-s">
               <li className="pr-[1rem] list-style-ty font-bold hover:translate-y-1 hover:scale-95 rounded-lg">
@@ -97,11 +95,13 @@ const RestaurantMenu = () => {
           return <Menu key={menu?.card?.info?.id} {...menu?.card?.info} />;
         })}
       </div> */}
-      {resInfo?.map((category) => {
+      {resInfo?.map((category, index) => {
         return (
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card.card}
+            showItems={index === showItems ? true : false}
+            setShowItems={() => setShowItems(index)}
           />
         );
       })}
