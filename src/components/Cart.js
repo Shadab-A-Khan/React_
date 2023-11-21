@@ -29,11 +29,14 @@ const Cart = () => {
           Nothing to Eat ?😔 , Let's get some food from Kitchen 😀
         </h1>
       )}
+      <div className="flex">
+      {foods.length === 0 && (<h1 className=" text-s text-gray-600 mb-1 mt-2.5 p-1 pr-3 shadow-[8px_8px_8px_-11px_rgba(0,0,0,0.9)] ">Let's go ➡️</h1>)}
       {foods.length === 0 && (
-        <li className="w-14 list-none m-1 mt-2.5 p-1 bg-blue-400 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
+        <li className="w-14 list-none m-1 mt-2.5 p-1 pl-[0.4rem] bg-blue-500 text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
           <Link to="/">Home</Link>
         </li>
       )}
+</div>
       <ItemList items={foods} />
 
       <div className=" flex ml-2 m-[4rem]">

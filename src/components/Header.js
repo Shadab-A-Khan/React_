@@ -30,9 +30,9 @@ const Header = () => {
           <li className="m-1 mt-2.5 p-1 hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
             <Link to="/about">About</Link>
           </li>
-          <li className=" m-1 mt-2.5 p-1  hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
+          {/* <li className=" m-1 mt-2.5 p-1  hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
             <Link to="/contact">Contact</Link>
-          </li>
+          </li> */}
           <li className=" flex m-1 mt-2.5 p-1  hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
             <Link to="/cart">Cart🛒</Link>
             <div className="flex text-xs h-[67%] text-white rounded-lg font-bold">
@@ -43,14 +43,14 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li> */}
           <button
-            className=" m-1 mt-2 p-1 pt-0 btnC cursor-pointer  hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]"
+            className=" m-1 mt-[0.9rem] p-1 pt-0 btnC cursor-pointer  hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]"
             onClick={() => {
               btn === "Login" ? setBtn("Logout") : setBtn("Login");
             }}
           >
             {btn}
           </button>
-          <li className=" bg-gray-200 text-blue-700 m-1 mt-2.5 p-1 pt-2 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
+          <li className=" bg-gray-200 text-blue-700 m-1 mt-2.5 p-1 hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
             {loggedInUser}
           </li>
           <li className="m-1 ml-0 mt-2.5 p-1 hover:bg-black hover:text-white hover:translate-y-1 hover:scale-95 hover:shadow-[0_0_3px_black] rounded-lg shadow-[0_0_1px_#adadad]">
