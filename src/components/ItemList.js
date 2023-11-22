@@ -8,7 +8,7 @@ const ItemList = ({ items }) => {
     dispatch(addItems(order));
   };
   return (
-    <div className="mb-14">
+    <div className="mb-[3.5rem]">
       {items.map((item) => (
         <div
           key={item.card.info.id}

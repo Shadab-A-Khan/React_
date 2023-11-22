@@ -33,13 +33,13 @@ const Body = () => {
         }
       }
       const resData = await checkJsonData(json);
-      console.log(" Hello! , we are **LIVE** now");
+      console.log(" Hello! , we are *LIVE* now");
       setListOfRestaurantList(resData);
       SetFilteredRestaurant(resData);
     } catch (error) {
       setListOfRestaurantList(restaurantList);
       SetFilteredRestaurant(restaurantList);
-      console.log(" Hello! , we are getting **mockData now**");
+      console.log(" Hello! , we are getting *mockData now*");
     }
   }
   const onlinestatus = useOnline_offline_status();
@@ -55,41 +55,8 @@ const Body = () => {
   return listOfrestaurantList.length == 0 ? (
     <Shimmer />
   ) : (
-    <div className="w-[100%] h-[100%]">
-      <div className="flex justify-between m-2.5">
-        {/*Search */}
-        <div className="m-2.5 p-2.5">
-          <input
-            type="text"
-            className="p-2 m-2 hover:translate-y-1"
-            value={searchText}
-            placeholder="Search Restaurant..."
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-
-          <button
-            className=" bg-blue-600 text-white p-2 m-2 rounded-lg hover:translate-y-1"
-            onClick={() => {
-              console.log(searchText);
-              const filteredRestaurant = listOfrestaurantList.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              SetFilteredRestaurant(filteredRestaurant);
-            }}
-          >
-            Press to Search
-          </button>
-        </div>
-        <div className="searchflex items-center m-4 p-2 rounded-[9px] shadow-[0_0_1.5px_#adadad] hover:scale-95 hover:shadow-[0_0_3px_#adadad]">
-          <input
-            className="p-3"
-            placeholder="Enter User Name"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
+    <div>
+      <div className=" flex w-[50%] m-auto justify-center text-center my-[2rem]">
         {/* fiter */}
         <button
           onClick={() => {
@@ -99,10 +66,43 @@ const Body = () => {
             SetFilteredRestaurant(filteredList);
           }}
         >
-          <h1 className="bg-green-600 text-white mx-10 p-2 rounded-lg hover:translate-y-1">
-            Top Rated ⭐{" "}
+          <h1 className="bg-green-600 text-white ml-[1rem] p-[0.5rem] mr-[0.6rem] rounded-lg hover:translate-y-1">
+            Filter 4⭐ Restaurants
           </h1>
         </button>
+        {/*Search */}
+        <div className="m-[0.25rem] p-[0.25rem]  shadow-[0_0_2.5px_#adadad] rounded-lg">
+          <input
+            type="text"
+            className="p-[0.25rem] pr-0 m-[0.25rem] hover:translate-y-1"
+            value={searchText}
+            placeholder="Search Restaurant..."
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+
+          <button
+            className=" bg-blue-600 text-white p-[0.25rem] m-[0.25rem] rounded-lg hover:translate-y-1"
+            onClick={() => {
+              console.log(searchText);
+              const filteredRestaurant = listOfrestaurantList.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              SetFilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
+      {/* <div className="searchflex items-center m-[0.25rem] p-[0.25rem] px-0 rounded-[9px] shadow-[0_0_1.5px_#adadad] hover:scale-95 hover:shadow-[0_0_3px_#adadad]">
+        <input
+          className="p-[0.25rem] pr-0 m-[0.25rem] hover:translate-y-1"
+          placeholder="Enter User Name"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </div> */}
       </div>
       <div className="flex flex-wrap mx-[7%] mr-rounded-lg">
         {filteredRestaurant.map((restaurant) => {

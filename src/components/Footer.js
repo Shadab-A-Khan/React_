@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer shadow-[8px_8px_8px_-10px_rgba(0,0,0,1.9)] mb-4 mt-28 bg-zinc-100 pt-3 border-black">
+    <div className="footer mb-4 mt-28 bg-zinc-100 pt-3 border-black">
       <div className=" flex m-auto justify-center my-4 mb-1">
         Created By{" "}
         <span className="font-semibold text-blue-800 px-2 hover:scale-95">
