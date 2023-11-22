@@ -11,7 +11,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   //now here we are subscribing to the hook using selector
-  const cartItems = useSelector((store) => store.items);
+  const cartItems = useSelector((store) => store.cart.items);
 
 
   return (

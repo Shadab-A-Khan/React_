@@ -108,7 +108,7 @@ const Body = () => {
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link
-              className="no-underline"
+              className="no-underline "
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >

@@ -13,6 +13,7 @@ import UserContext from "../utils/UserContext.js";
 import { Provider } from "react-redux"; //provids the appStore to our react application (bridge betwn redux-react)
 import appStore from "../utils/AppStore.js";
 import Cart from "./components/Cart.js";
+import Footer from "./components/Footer.js";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -26,6 +27,7 @@ const AppLayout = () => {
         <div className="app">
           <Header />
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>
