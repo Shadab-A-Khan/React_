@@ -23,10 +23,10 @@ class About extends React.Component {
       //   </div> */}
       //   <UserClass />
       // </div>
-      <div className="flex">
-        <div className="w-1/2 m-[20rem] mr-0 my-[13rem]">
-          <h1 className="bg-green-700 w-[60%] p-2 rounded-lg text-white text-xl hover:scale-95 hover:bg-gray-600">
-            Eat better , Taste better and Feel better
+      <div className="flex p-[2rem]">
+        <div className="w-1/2 m-auto mt-[11%] ml-[2rem] justify-end">
+          <h1 className="bg-green-700 w-[45%] p-2 rounded-lg text-white text-xl hover:scale-95 hover:bg-gray-600">
+            Eat better Feel better
           </h1>
           <h1 className="text-3xl p-3 pl-0">
             Welcome to Our
@@ -55,7 +55,7 @@ class About extends React.Component {
             </button>
           </div>
         </div>
-        <div className="bg-white w-1/2">
+        <div className="m-auto bg-white w-1/2">
           <img
             className="w-[50%] m-[12rem] ml-0 hover:scale-95"
             src="https://foodfire-chapter09.netlify.app/burger-image.ec55d069.png"
